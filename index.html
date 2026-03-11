@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Repositório de Painéis Públicos – Rede EBSERH</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--bg:#0a0a0f;
+--card:#14141c;
+--accent:#16c79a;
+--text:#e8e8ef;
+--sub:#9fa6b2;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Source Sans 3',sans-serif;
+background:var(--bg);
+color:var(--text);
+line-height:1.6;
+}
+
+h1,h2,h3{
+font-family:'Outfit',sans-serif;
+}
+
+a{
+color:var(--accent);
+text-decoration:none;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+backdrop-filter: blur(10px);
+background:rgba(10,10,15,0.7);
+border-bottom:1px solid #222;
+z-index:1000;
+}
+
+nav .container{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:16px 0;
+}
+
+nav ul{
+display:flex;
+gap:20px;
+list-style:none;
+}
+
+nav a:hover{
+opacity:.7;
+}
+
+.hero{
+padding-top:120px;
+padding-bottom:100px;
+text-align:center;
+}
+
+.hero h1{
+font-size:40px;
+margin-bottom:20px;
+}
+
+.hero p{
+color:var(--sub);
+max-width:700px;
+margin:auto;
+}
+
+.btns{
+margin-top:30px;
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:12px 26px;
+border-radius:30px;
+border:1px solid var(--accent);
+transition:.3s;
+}
+
+.btn:hover{
+background:var(--accent);
+color:#000;
+}
+
+section{
+padding:80px 0;
+}
+
+.section-title{
+font-size:28px;
+margin-bottom:40px;
+}
+
+
+.badge{
+display:inline-block;
+padding:4px 10px;
+background:#1f1f29;
+border-radius:20px;
+font-size:12px;
+margin-right:6px;
+}
+
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:28px;
+}
+
+
+.card{
+background:var(--card);
+padding:28px;
+border-radius:10px;
+border:1px solid #1c1c25;
+transition:.3s;
+position:relative;
+overflow:hidden;
+}
+
+
+
+.card:hover{
+transform:translateY(-6px);
+border-color:var(--accent);
+}
+
+.card-link{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:10;
+}
+
+.card::after{
+content:"Abrir painel";
+position:absolute;
+bottom:15px;
+right:15px;
+background:var(--accent);
+color:#000;
+padding:6px 10px;
+font-size:12px;
+border-radius:20px;
+opacity:0;
+transition:.3s;
+}
+
+.card:hover::after{
+opacity:1;
+}
+
+.preview{
+width:100%;
+height:260px;
+border-radius:8px;
+border:1px solid #1f1f2a;
+margin-top:18px;
+}
+
+.metrics{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:25px;
+text-align:center;
+}
+
+.metric h3{
+font-size:38px;
+color:var(--accent);
+}
+
+.metric p{
+color:var(--sub);
+}
+
+.timeline{
+display:grid;
+gap:22px;
+}
+
+.timeline-item{
+background:var(--card);
+padding:24px;
+border-left:3px solid var(--accent);
+}
+
+footer{
+border-top:1px solid #1f1f29;
+padding:40px 0;
+text-align:center;
+color:var(--sub);
+}
+
+.fade{
+opacity:0;
+transform:translateY(30px);
+transition:1s;
+}
+
+.fade.visible{
+opacity:1;
+transform:translateY(0);
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="container">
+<strong>Repositório de Painéis</strong>
+<ul>
+<li><a href="#sobre">Sobre</a></li>
+<li><a href="#paineis">Painéis</a></li>
+<li><a href="#producao">Produção</a></li>
+<li><a href="#coordenador">Coordenador</a></li>
+</ul>
+</div>
+</nav>
+
+<header class="hero container fade">
+
+<h1>Repositório de Painéis Públicos<br>Hospitais Universitários da Rede EBSERH</h1>
+
+<p>
+Projeto de ciência de dados aplicado à saúde que disponibiliza painéis analíticos públicos
+para apoiar a gestão hospitalar, a transparência institucional e a pesquisa científica
+nos hospitais universitários federais da Rede EBSERH.
+</p>
+
+<div class="btns">
+<a class="btn" href="#paineis">Ver Painéis</a>
+<a class="btn" href="https://github.com/repositorio-paineis-publicos" target="_blank">GitHub</a>
+<a class="btn" href="https://www.linkedin.com/in/abelbrasilrs/" target="_blank">LinkedIn</a>
+</div>
+
+</header>
+
+<section id="sobre" class="container fade">
+
+<h2 class="section-title">Sobre o Projeto</h2>
+
+<p>
+O Repositório de Painéis Públicos é uma iniciativa voltada à democratização do acesso
+a informações estratégicas da saúde pública. Utilizando técnicas de ciência de dados,
+engenharia de dados e visualização analítica, o projeto desenvolve dashboards que
+apoiam gestores, pesquisadores e profissionais da saúde na tomada de decisão baseada em dados.
+</p>
+
+<br>
+
+<div>
+<span class="badge">Open Data</span>
+<span class="badge">Dados em Saúde</span>
+<span class="badge">R</span>
+<span class="badge">SQL</span>
+<span class="badge">PostgreSQL</span>
+<span class="badge">Ciência de Dados</span>
+<span class="badge">Visualização de Dados</span>
+</div>
+
+</section>
+
+<section id="paineis" class="container fade">
+
+<h2 class="section-title">Painéis Analíticos</h2>
+
+<p>
+
+Os painéis PAGHA e PAPAH serão atualizados mensalmente. Os dados dispostos nos painéis PASIM e PANASC são disponibilizados anualmente. Até o momento, o DATASUS disponibilizou dados anuais do SIM e SINASC até 2024.
+
+<br>
+
+Última atualização: 16/02/2026
+
+<br>
+
+Próxima atualização: 16/03/2026
+
+</p>
+
+<br>
+
+
+
+<div class="grid">
+
+
+<div class="card">
+<a class="card-link" target="_blank"
+href="https://app.powerbi.com/view?r=eyJrIjoiMzVmMzFjZGYtNzZiMS00N2ZhLThkMGItMWIyMDkxMTc2NTJkIiwidCI6IjY0ZDM0ZGRkLWFmZjAtNGQ5NS1iN2YxLTA3MzRhNWM4NDVlNSJ9"></a>
+
+<h3>PAGHA</h3>
+<p>Painel da Gestão Hospitalar Automatizada.</p>
+
+<iframe class="preview"
+src="https://app.powerbi.com/view?r=eyJrIjoiMzVmMzFjZGYtNzZiMS00N2ZhLThkMGItMWIyMDkxMTc2NTJkIiwidCI6IjY0ZDM0ZGRkLWFmZjAtNGQ5NS1iN2YxLTA3MzRhNWM4NDVlNSJ9"></iframe>
+</div>
+
+
+<div class="card">
+<a class="card-link" target="_blank"
+href="https://app.powerbi.com/view?r=eyJrIjoiYTAyNzQ2MTAtMTRjYi00MTA2LWJhNmQtNmU2NzExYTY2ZjM3IiwidCI6IjY0ZDM0ZGRkLWFmZjAtNGQ5NS1iN2YxLTA3MzRhNWM4NDVlNSJ9"></a>
+
+<h3>PAPAH</h3>
+<p>Painel da Produção Ambulatorial Hospitalar.</p>
+
+<iframe class="preview"
+src="https://app.powerbi.com/view?r=eyJrIjoiYTAyNzQ2MTAtMTRjYi00MTA2LWJhNmQtNmU2NzExYTY2ZjM3IiwidCI6IjY0ZDM0ZGRkLWFmZjAtNGQ5NS1iN2YxLTA3MzRhNWM4NDVlNSJ9"></iframe>
+</div>
+
+
+<div class="card">
+<a class="card-link" target="_blank"
+href="https://app.powerbi.com/view?r=eyJrIjoiZDRmMTBjNjMtOTA4Yi00MWJkLWEzNzAtMzMyMjU3NTNmMGE2IiwidCI6IjY0ZDM0ZGRkLWFmZjAtNGQ5NS1iN2YxLTA3MzRhNWM4NDVlNSJ9"></a>
+
+<h3>PASIM</h3>
+<p>Painel da Informação sobre Mortalidade.</p>
+
+<iframe class="preview"
+src="https://app.powerbi.com/view?r=eyJrIjoiZDRmMTBjNjMtOTA4Yi00MWJkLWEzNzAtMzMyMjU3NTNmMGE2IiwidCI6IjY0ZDM0ZGRkLWFmZjAtNGQ5NS1iN2YxLTA3MzRhNWM4NDVlNSJ9"></iframe>
+</div>
+
+
+<div class="card">
+<a class="card-link" target="_blank"
+href="https://app.powerbi.com/view?r=eyJrIjoiNWM3NDM0ZmItNDdiMy00YjY0LTkwMzMtYjdhZWY3MGM0MzU5IiwidCI6IjY0ZDM0ZGRkLWFmZjAtNGQ5NS1iN2YxLTA3MzRhNWM4NDVlNSJ9"></a>
+
+<h3>PANASC</h3>
+<p>Painel dos Nascidos Vivos.</p>
+
+<iframe class="preview"
+src="https://app.powerbi.com/view?r=eyJrIjoiNWM3NDM0ZmItNDdiMy00YjY0LTkwMzMtYjdhZWY3MGM0MzU5IiwidCI6IjY0ZDM0ZGRkLWFmZjAtNGQ5NS1iN2YxLTA3MzRhNWM4NDVlNSJ9"></iframe>
+</div>
+
+
+</div>
+
+</section>
+
+<section id="producao" class="container fade">
+
+<h2 class="section-title">Produção Científica</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<h3>Artigos Científicos</h3>
+<p>
+<a href="https://ojs.focopublicacoes.com.br/foco/article/view/9607/6990" target="_blank">Artigo PASIM</a><br>
+<a href="https://ojs.focopublicacoes.com.br/foco/article/view/8133/5752" target="_blank">Artigo PANASC</a><br>
+<a href="https://ojs.focopublicacoes.com.br/foco/article/view/8280/5854" target="_blank">Artigo PAPAH</a><br>
+<a href="https://ojs.focopublicacoes.com.br/foco/article/view/10099/7123" target="_blank">Artigo PAPAHR</a>
+</p>
+</div>
+
+<div class="timeline-item">
+<h3>Congresso</h3>
+<p>
+<a href="https://sol.sbc.org.br/index.php/sbcas_estendido/article/view/35587" target="_blank">
+Publicação no Congresso da Sociedade Brasileira de Computação Aplicada à Saúde
+</a>
+</p>
+</div>
+
+<div class="timeline-item">
+<h3>Reconhecimento Institucional</h3>
+<p>
+<a href="https://www.gov.br/ebserh/pt-br/comunicacao/noticias/projetos-premiados-pela-ebserh-contribuem-no-tratamento-do-zumbido-no-ouvido-e-no-acesso-a-dados-essenciais-para-a-gestao-em-saude" target="_blank">
+Matéria EBSERH
+</a>
+<br>
+<a href="https://www.gov.br/ebserh/pt-br/hospitais-universitarios/regiao-nordeste/ch-ufc/comunicacao/noticias/projeto-ch-ufc-conquista-1o-lugar-no-programa-de-iniciacao-cientifica-e-tecnologica-da-ebserh" target="_blank">
+Premiação de Iniciação Científica
+</a>
+</p>
+</div>
+
+<div class="timeline-item">
+<h3>Patente e TCC</h3>
+<p>
+<a href="https://drive.google.com/file/d/1d2GYow4IVqB1sjbgVKWRqwh4uVfTADKv/view?usp=sharing" target="_blank">Patente</a>
+<br>
+<a href="https://drive.google.com/file/d/1ZkV7_63G2YmuDBSCiNl38M5HuMfmwC1Q/view?usp=sharing" target="_blank">Trabalho de Conclusão de Curso</a>
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="coordenador" class="container fade">
+
+<h2 class="section-title">Coordenação do Projeto</h2>
+
+
+<h3>Abel Brasil Ramos da Silva</h3>
+
+<p>
+Pesquisador e especialista em ciência de dados aplicada à saúde,
+atuando no desenvolvimento de soluções analíticas e sistemas de
+inteligência de dados para hospitais universitários.
+</p>
+
+<br>
+
+<a href="https://www.linkedin.com/in/abelbrasilrs/" target="_blank">LinkedIn</a>
+<br>
+<a href="https://lattes.cnpq.br/1178144531072666" target="_blank">Currículo Lattes</a>
+
+
+</section>
+
+<footer>
+
+<p>
+Repositório de Painéis Públicos – Rede EBSERH
+</p>
+
+<p>
+Projeto de Ciência de Dados em Saúde
+</p>
+
+</footer>
+
+<script>
+
+const observer = new IntersectionObserver(entries => {
+entries.forEach(entry => {
+if(entry.isIntersecting){
+entry.target.classList.add("visible");
+}
+});
+});
+
+document.querySelectorAll(".fade").forEach(el => observer.observe(el));
+
+</script>
+
+</body>
+</html>
